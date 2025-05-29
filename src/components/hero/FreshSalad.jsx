@@ -2,27 +2,27 @@ import Image from "next/image";
 
 const FreshSalad = () => {
   return (
-    <div className="flex">
-      <div className="ml-24">
+    <div className="md:flex mt-8 mb-15">
+      <div className="hidden lg:block ml-24">
         <Image
           src={"/assets/line.png"}
           width={100}
           height={10}
           alt="Fresh Salad"
-          className=" rounded-full"
+          className="rounded-full"
         />
       </div>
-      <div className="bg-fh-gray-50 p-5 rounded-2xl flex items-center space-x-4 w-max ml-10 ">
+      <div className="bg-fh-gray-50 md:p-5 p-2 rounded-md lg:rounded-2xl flex items-center space-x-4 w-max lg:ml-10 ">
         <div className="">
           <p className="text-green-600 font-semibold">Special Offer</p>
-          <h3 className="text-3xl font-bold">Fresh Salad</h3>
-          <p className="text-lg font-semibold my-1">
+          <h3 className="md:text-3xl text-lg font-bold">Fresh Salad</h3>
+          <p className="md:text-lg text-sm font-semibold md:my-1">
             <span className="text-green-600  text-md">Up to </span>
-            <span className="text-2xl font-bold">70%</span> off
+            <span className="md:text-2xl text-sm font-bold">70%</span> off
           </p>
           <button
             type="button"
-            className="bg-green-700 mt-2 inline-block text-white font-semibold px-3 py-2 text-sm rounded-full "
+            className="bg-green-700 mt-2 inline-block text-white font-semibold md:px-3 md:py-2 text-[8px] md:text-sm px-1 rounded-full "
           >
             CODE : <span className="text-yellow-300">FRESH25</span>
           </button>
@@ -32,7 +32,7 @@ const FreshSalad = () => {
           width={130}
           height={100}
           alt="Fresh Salad"
-          className=" rounded-full"
+          className=" w-14 h-14 md:w-18 md:h-18 lg:w-28 lg:h-28 rounded-full"
         />
       </div>
     </div>

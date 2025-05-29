@@ -5,13 +5,13 @@ const DiscountSeasonal = () => {
   return (
     <div className="bg-fh-gray-20 py-[90px]">
       <div className="container">
-        <div className="flex items-center">
-          <div className="w-3/4">
-            <div className=" ">
-              <h3 className="bg-fh-gray-50 inline-block  px-2 rounded-sm text-fh-green font-semibold  text-xl  ">
+        <div className="md:flex items-center">
+          <div className="md:w-3/4">
+            <div className=" text-center md:text-left">
+              <h3 className="bg-fh-gray-50 inline-block  px-2 rounded-sm text-fh-green font-semibold  md:text-xl  ">
                 Special Offer
               </h3>
-              <h2 className="text-fh-block text-6xl font-bold my-4">
+              <h2 className="text-fh-block  text-5xl md:text-6xl font-bold my-4">
                 Seasonal Fruit Bundle
               </h2>
               <h4 className="text-fh-block text-4xl max-w-md font-semibold  mb-5">
@@ -23,7 +23,7 @@ const DiscountSeasonal = () => {
               </button>
             </div>
           </div>
-          <div className=" relative">
+          <div className=" hidden md:block relative">
             <div className="">
               <Image
                 src={"/assets/pata.png"}

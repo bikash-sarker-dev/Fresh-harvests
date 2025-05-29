@@ -12,7 +12,7 @@ const FreshProducts = () => {
             src={"/assets/pata.png"}
             width={60}
             height={10}
-            className="absolute top-[-100px] right-30 z-11"
+            className="absolute top-[-100px] md:right-30 right-5 z-11"
           />
         </div>
         <div className="">
@@ -20,7 +20,7 @@ const FreshProducts = () => {
             src={"/assets/pata.png"}
             width={60}
             height={10}
-            className="absolute top-[-50px] left-25 z-11 rotate-45"
+            className="absolute top-[-50px] md:left-25 z-11 rotate-45"
           />
         </div>
         <SectionHeader

@@ -60,7 +60,7 @@ const SingIn = () => {
               />
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-between ">
+            <div className="flex f sm:flex-row items-center justify-between ">
               <div className="flex items-center  sm:mb-0">
                 <input
                   type="checkbox"

@@ -85,27 +85,30 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mt-2">Accepted Payment Methods:</h3>
             <ul className="flex gap-4 mt-3">
-              <li>
+              <li className="h-16 ">
                 <Image
                   src={"/assets/paymentLogo/pay1.png"}
                   width={95}
                   height={67}
-                  alt="logo image"
+                  className="h-16"
+                  alt="logo image "
                 />
               </li>
-              <li>
+              <li className=" h-12">
                 <Image
                   src={"/assets/paymentLogo/pay2.png"}
                   width={95}
                   height={60}
                   alt="logo image"
+                  className="h-16"
                 />
               </li>
-              <li>
+              <li className=" h-18 ">
                 <Image
                   src={"/assets/paymentLogo/pay3.png"}
                   width={95}
                   height={65}
+                  className="h-16"
                   alt="logo image"
                 />
               </li>

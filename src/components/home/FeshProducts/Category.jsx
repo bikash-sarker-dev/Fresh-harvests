@@ -1,7 +1,7 @@
 const Category = () => {
   return (
     <div>
-      <ul className="flex gap-6 justify-center mt-4">
+      <ul className="flex sm:gap-6 gap-2 justify-center mt-4">
         <li>
           <button className="btn bg-fh-green text-white">All</button>
         </li>

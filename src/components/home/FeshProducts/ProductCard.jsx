@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const ProductCard = () => {
   return (
-    <div className="card group cursor-pointer bg-base-100 pt-3 rounded-xl shadow-sm mb-2 p-3 py-0">
+    <div className="card group cursor-pointer bg-base-100 md:pt-3 pt-2 rounded-xl shadow-sm mb-2 md:p-3 p-2 py-0">
       <figure className=" p-10 bg-fh-gray-20 rounded-xl">
         <img
           src={"/assets/product/product-1.png"}
@@ -16,7 +16,7 @@ const ProductCard = () => {
         <div className="card-actions w-full">
           <Link
             href={""}
-            className="btn group-hover:bg-fh-primary duration-300 ease-in-out  btn-block border border-fh-gray-50"
+            className="btn btn-sm md:btn- group-hover:bg-fh-primary duration-300 ease-in-out  btn-block border border-fh-gray-50"
           >
             Add To Card
           </Link>

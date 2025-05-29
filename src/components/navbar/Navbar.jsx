@@ -69,7 +69,7 @@ const Navbar = () => {
             <ul className="menu menu-horizontal px-1 space-x-7">{links}</ul>
           </div>
           <div className="navbar-end space-x-6">
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 hidden lg:block">
               <MdOutlineFavorite className="text-xl" />
               <span>Favorites</span>
             </div>
@@ -81,7 +81,7 @@ const Navbar = () => {
                   8
                 </span>
               </div>
-              <span>Cart</span>
+              <span className="hidden lg:block">Cart</span>
             </div>
 
             <button

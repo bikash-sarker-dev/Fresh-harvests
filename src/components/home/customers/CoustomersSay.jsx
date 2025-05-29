@@ -10,14 +10,14 @@ import { Autoplay, Pagination } from "swiper/modules";
 
 const CustomersSay = () => {
   return (
-    <div className="my-[110px] ">
+    <div className="lg:my-[110px]  my-20">
       <div className="container relative">
         <div className="">
           <Image
             src={"/assets/pata.png"}
             width={60}
             height={10}
-            className="absolute top-15 rotate-45 left-0 z-11"
+            className="absolute md:top-15 top-[-35px]  rotate-45 left-0 z-11"
           />
         </div>
         <div className="">
@@ -25,7 +25,7 @@ const CustomersSay = () => {
             src={"/assets/pata.png"}
             width={60}
             height={10}
-            className="absolute top-20 right-0 z-11"
+            className="absolute md:top-20 top-[-35px] right-0 z-11"
           />
         </div>
         <SectionHeader
@@ -53,8 +53,8 @@ const CustomersSay = () => {
             className="mySwiper"
           >
             <SwiperSlide>
-              <div className="flex items-center justify-center">
-                <div className="w-1/3">
+              <div className="md:flex items-center justify-center">
+                <div className="md:w-1/3 flex justify-center">
                   <div className="">
                     <Image
                       src={"/assets/testi.png"}
@@ -65,7 +65,7 @@ const CustomersSay = () => {
                     />
                   </div>
                 </div>
-                <div className="w-2/3">
+                <div className="md:w-2/3">
                   <div className="bg-fh-gray-20 p-5 rounded-xl max-w-lg">
                     <p className="">
                       "I absolutely love Fresh Harvest! The quality of their

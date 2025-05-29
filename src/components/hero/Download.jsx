@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Download = () => {
   return (
-    <div className="mt-3 relative z-10">
+    <div className="mt-3 relative z-100">
       <h5 className="text-fh-block relative z-10 ">Download App:</h5>
       <div className="flex space-x-4 mt-4 relative z-10">
         <Image
@@ -20,7 +20,7 @@ const Download = () => {
           className=""
         />
       </div>
-      <div className="  ">
+      <div className=" hidden md:block ">
         <Image
           src={"/assets/pata.png"}
           width={60}
