@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const FreshSalad = () => {
   return (
-    <div className="md:flex mt-8 mb-15">
+    <div className="md:flex mt-8 mb-15 lg:my-0 ">
       <div className="hidden lg:block ml-24">
         <Image
           src={"/assets/line.png"}

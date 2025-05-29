@@ -1,19 +1,17 @@
-const Category = () => {
+const Category = ({ data, handleCategory }) => {
   return (
     <div>
       <ul className="flex sm:gap-6 gap-2 justify-center mt-4">
-        <li>
-          <button className="btn bg-fh-green text-white">All</button>
-        </li>
-        <li>
-          <button className="btn text-fh-gray-100">Fruits</button>
-        </li>
-        <li>
-          <button className="btn text-fh-gray-100">Vegetables</button>
-        </li>
-        <li>
-          <button className="btn text-fh-gray-100">Salad</button>
-        </li>
+        {data.map((categoric) => (
+          <li key={categoric?.id}>
+            <button
+              onClick={() => handleCategory(categoric.id)}
+              className={`btn  text-white ${categoric.id ? "bg-fh-green" : ""}`}
+            >
+              {categoric?.categoryName}
+            </button>
+          </li>
+        ))}
       </ul>
     </div>
   );

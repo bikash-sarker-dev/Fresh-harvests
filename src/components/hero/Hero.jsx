@@ -49,7 +49,7 @@ const Hero = () => {
                 src={"/assets/banner-image.png"}
                 width={880}
                 height={700}
-                className="absolute w-[250] md:w-[400] xl:[800] bottom-[-46px] right-[-20px] md:right-[-20px] z-10 "
+                className="absolute w-[250] md:w-[400] xl:[880] bottom-[-46px] right-[-20px] md:right-[-20px] z-10 "
               />
             </div>
           </div>
