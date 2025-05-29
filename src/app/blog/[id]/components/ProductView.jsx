@@ -9,7 +9,7 @@ const ProductView = () => {
     );
   };
   return (
-    <div className="container my-8">
+    <div className="container my-8 mt-20">
       <div className="flex flex-col md:flex-row   p-6 max-w-4xl mx-auto">
         {/* Product Image */}
         <div className="flex-1 border border-fh-gray-50 rounded-xl p-5  flex justify-center items-center">

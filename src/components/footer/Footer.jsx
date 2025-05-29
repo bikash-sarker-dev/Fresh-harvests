@@ -19,7 +19,7 @@ const Footer = () => {
           </Link>
           <div className="mt-10 ">
             <h5 className="text-fh-block relative z-10 ">Download App:</h5>
-            <div className="flex space-x-4 mt-4">
+            <div className="sm:flex sm:space-x-4 space-y-3 sm:space-y-0 mt-4">
               <Image
                 width={130}
                 height={40}

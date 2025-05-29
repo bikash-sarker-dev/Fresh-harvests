@@ -8,7 +8,7 @@ const BlogCard = () => {
         <figure className="rounded-xl">
           <img
             src={"/assets/blog1.png"}
-            alt="Shoes"
+            alt="no image"
             className="rounded-xl group-hover:scale-125 transition duration-300 ease-in-out"
           />
         </figure>

@@ -1,4 +1,4 @@
-const Category = ({ data, handleCategory }) => {
+const Category = ({ data, handleCategory, active }) => {
   return (
     <div>
       <ul className="flex sm:gap-6 gap-2 justify-center mt-4">
@@ -6,7 +6,9 @@ const Category = ({ data, handleCategory }) => {
           <li key={categoric?.id}>
             <button
               onClick={() => handleCategory(categoric.id)}
-              className={`btn  text-white ${categoric.id ? "bg-fh-green" : ""}`}
+              className={`btn btn-sm md:btn-md  ${
+                categoric.id === active ? "bg-fh-green text-white" : ""
+              }`}
             >
               {categoric?.categoryName}
             </button>

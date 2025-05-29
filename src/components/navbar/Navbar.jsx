@@ -1,24 +1,40 @@
 "use client";
+import { useCookies } from "next-client-cookies";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { MdOutlineFavorite } from "react-icons/md";
 import SingIn from "../auth/SingIn";
 
 const Navbar = () => {
+  let [users, setUser] = useState(null);
+  const cookies = useCookies();
+
+  const handleSignOut = () => {
+    let token = cookies.remove("token");
+    setUser(token);
+    window.location.replace();
+  };
+
+  useEffect(() => {
+    let token = cookies.get("token");
+    setUser(token);
+  }, [users]);
+
   let links = (
     <>
       <li>
         <Link href={"/"}>Home</Link>
       </li>
       <li>
-        <Link href={"/shope"}>Shop</Link>
+        <Link href={"/products"}>Shop</Link>
       </li>
       <li>
-        <Link href={"/about"}>About Us</Link>
+        <Link href={"/"}>About Us</Link>
       </li>
       <li>
-        <Link href={"/blog"}>BLog</Link>
+        <Link href={"/blog/id"}>BLog</Link>
       </li>
     </>
   );
@@ -56,7 +72,7 @@ const Navbar = () => {
                 {links}
               </ul>
             </div>
-            <Link href={"/"} className="btn btn-ghost text-xl">
+            <Link href={"/"}>
               <Image
                 src={"/assets/logo.png"}
                 width={170}
@@ -69,7 +85,7 @@ const Navbar = () => {
             <ul className="menu menu-horizontal px-1 space-x-7">{links}</ul>
           </div>
           <div className="navbar-end space-x-6">
-            <div className="flex items-center gap-1 hidden lg:block">
+            <div className="lg:flex items-center gap-1 hidden lg:block">
               <MdOutlineFavorite className="text-xl" />
               <span>Favorites</span>
             </div>
@@ -78,21 +94,34 @@ const Navbar = () => {
               <div className="indicator">
                 <FaShoppingCart className="text-2xl" />
                 <span className="badge badge-sm w-5 h-5 text-white indicator-item bg-fh-primary rounded-full">
-                  8
+                  0
                 </span>
               </div>
               <span className="hidden lg:block">Cart</span>
             </div>
-
-            <button
-              onClick={() => {
-                history.pushState(null, "", "http://localhost:3000/sing-in");
-                return document.getElementById("login").showModal();
-              }}
-              className="btn btn-outline"
-            >
-              Sign in
-            </button>
+            {users ? (
+              <>
+                {" "}
+                <button
+                  onClick={handleSignOut}
+                  className="btn btn-sm md:btn-md btn-outline"
+                >
+                  Sign Out
+                </button>
+              </>
+            ) : (
+              <>
+                {" "}
+                <button
+                  onClick={() => {
+                    return document.getElementById("login").showModal();
+                  }}
+                  className="btn btn-sm md:btn-md  btn-outline"
+                >
+                  Sign in
+                </button>
+              </>
+            )}
           </div>
         </div>
         <dialog id="login" className="modal">

@@ -9,7 +9,7 @@ const ProductCard = ({ product }) => {
         <img
           src={images}
           alt="product"
-          className="rounded-xl h-[100] group-hover:scale-125 transition duration-300 ease-in-out"
+          className="rounded-xl h-[40] md:h-[100] group-hover:scale-125 transition duration-300 ease-in-out"
         />
       </figure>
       <div className="card-body px-0 pb-4 items-center mt-[-10px] text-center mb-0">

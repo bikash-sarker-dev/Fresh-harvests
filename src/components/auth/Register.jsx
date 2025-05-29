@@ -1,17 +1,38 @@
 "use client";
+import axios from "axios";
 import { useState } from "react";
+import toast from "react-hot-toast";
 import SocialLogin from "./SocialLogin";
 const Register = () => {
-  const [username, setUserName] = useState("");
+  const [fullName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const [rememberMe, setRememberMe] = useState(false);
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    setLoading(!loading);
     e.preventDefault();
     // Handle login logic here
-    console.log({ username, email, password, rememberMe });
+    let payload = { fullName, email, password };
+
+    try {
+      let res = await axios.post(
+        `https://code-commando.com/api/v1/users/register`,
+        payload
+      );
+      let data = await res.data;
+      console.log(data);
+      if (data.success) {
+        setLoading(!loading);
+        document.getElementById("register").close();
+        toast.success("successfully ");
+        setPassword("");
+        setUserName("");
+        setEmail("");
+      }
+    } catch (error) {
+      toast.error("authentication failed");
+    }
   };
   return (
     <div>
@@ -26,7 +47,7 @@ const Register = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
               <label
-                htmlFor="email"
+                htmlFor="text"
                 className="block text-sm font-medium text-gray-600"
               >
                 Full Name
@@ -36,8 +57,8 @@ const Register = () => {
                 id="text"
                 placeholder="Enter your username"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-fh-primary focus:border-transparent"
-                value={username}
-                onChange={(e) => setEmail(e.target.value)}
+                value={fullName}
+                onChange={(e) => setUserName(e.target.value)}
                 required
               />
             </div>
@@ -81,7 +102,7 @@ const Register = () => {
               type="submit"
               className="w-full bg-fh-primary hover:bg-fh-primary text-white py-2 px-4 rounded-md transition duration-200"
             >
-              Register
+              {loading ? "loading......" : "Register"}
             </button>
           </form>
 
@@ -100,7 +121,6 @@ const Register = () => {
               Already have an account?
               <button
                 onClick={() => {
-                  history.pushState(null, "", "http://localhost:3000/sing-in");
                   document.getElementById("register").close();
                   return document.getElementById("login").showModal();
                 }}

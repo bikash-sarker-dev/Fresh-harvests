@@ -26,6 +26,7 @@ const Download = () => {
           width={60}
           height={10}
           className="absolute top-2 left-[-30px] z-[-00]"
+          alt="no support image"
         />
       </div>
     </div>

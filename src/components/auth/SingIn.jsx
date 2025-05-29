@@ -1,17 +1,45 @@
 "use client";
+import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+import toast from "react-hot-toast";
 import Register from "./Register";
 import SocialLogin from "./SocialLogin";
 const SingIn = () => {
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
+  const router = useRouter();
 
-  const handleSubmit = (e) => {
+  // / Handle login logic here
+  const handleSubmit = async (e) => {
+    setLoading(!loading);
     e.preventDefault();
-    // Handle login logic here
-    console.log({ email, password, rememberMe });
+
+    let payload = { email, password };
+    console.log(payload);
+    try {
+      let res = await axios.post(
+        `https://code-commando.com/api/v1/auth/login`,
+        payload
+      );
+      let data = await res.data;
+      console.log(data);
+      if (data.success) {
+        setLoading(!loading);
+        const theme = cookieStore.set("token", data.data.token);
+        document.getElementById("login").close();
+        toast.success("successfully sign in ");
+        setPassword("");
+        setEmail("");
+        window.location.reload();
+        router.push("/");
+      }
+    } catch (error) {
+      toast.error("login is Failed");
+    }
   };
   return (
     <div>
@@ -88,7 +116,7 @@ const SingIn = () => {
               type="submit"
               className="w-full bg-fh-primary hover:bg-fh-primary text-white py-2 px-4 rounded-md transition duration-200"
             >
-              Login
+              {loading ? "loading...." : "Login"}
             </button>
           </form>
 
@@ -107,7 +135,6 @@ const SingIn = () => {
               Don't have an account?{" "}
               <button
                 onClick={() => {
-                  history.pushState(null, "", "http://localhost:3000/rigister");
                   document.getElementById("login").close();
                   return document.getElementById("register").showModal();
                 }}

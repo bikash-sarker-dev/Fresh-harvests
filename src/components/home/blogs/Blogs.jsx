@@ -6,7 +6,7 @@ const Blogs = () => {
   return (
     <div className="mb-28">
       <div className="container relative">
-        <div className="">
+        <div className="hidden md:block">
           <Image
             src={"/assets/pata.png"}
             width={60}

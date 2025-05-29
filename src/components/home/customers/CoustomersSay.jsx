@@ -18,6 +18,7 @@ const CustomersSay = () => {
             width={60}
             height={10}
             className="absolute md:top-15 top-[-35px]  rotate-45 left-0 z-11"
+            alt="no support image"
           />
         </div>
         <div className="">
@@ -26,6 +27,7 @@ const CustomersSay = () => {
             width={60}
             height={10}
             className="absolute md:top-20 top-[-35px] right-0 z-11"
+            alt="no support image"
           />
         </div>
         <SectionHeader
@@ -87,8 +89,8 @@ const CustomersSay = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="flex items-center justify-center">
-                <div className="w-1/3">
+              <div className="md:flex items-center justify-center">
+                <div className="md:w-1/3 flex justify-center">
                   <div className="">
                     <Image
                       src={"/assets/testi.png"}
@@ -99,7 +101,7 @@ const CustomersSay = () => {
                     />
                   </div>
                 </div>
-                <div className="w-2/3">
+                <div className="md:w-2/3">
                   <div className="bg-fh-gray-20 p-5 rounded-xl max-w-lg">
                     <p className="">
                       "I absolutely love Fresh Harvest! The quality of their
@@ -121,8 +123,8 @@ const CustomersSay = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="flex items-center justify-center">
-                <div className="w-1/3">
+              <div className="md:flex items-center justify-center">
+                <div className="md:w-1/3 flex justify-center">
                   <div className="">
                     <Image
                       src={"/assets/testi.png"}
@@ -133,7 +135,7 @@ const CustomersSay = () => {
                     />
                   </div>
                 </div>
-                <div className="w-2/3">
+                <div className="md:w-2/3">
                   <div className="bg-fh-gray-20 p-5 rounded-xl max-w-lg">
                     <p className="">
                       "I absolutely love Fresh Harvest! The quality of their

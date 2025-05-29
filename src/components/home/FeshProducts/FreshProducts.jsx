@@ -6,10 +6,11 @@ import Category from "./Category";
 import ProductCard from "./ProductCard";
 
 const FreshProducts = ({ data, product }) => {
-  //   let [product, setProduct] = useState([]);
+  let [active, setActive] = useState();
   let [category, setCategory] = useState([]);
 
   const handleCategory = (id) => {
+    setActive(id);
     if (id) {
       let categoryFilter = product.filter(
         (product) => product.categoryId === id
@@ -20,17 +21,9 @@ const FreshProducts = ({ data, product }) => {
       setCategory(defaultProduct);
     }
   };
-  console.log(product);
+
   let defaultProduct = product.slice(0, 8);
   const mainProduct = defaultProduct || category;
-
-  //   useEffect(() => {
-  //     async function getCategory() {
-
-  //       setProduct(data.data);
-  //     }
-  //     getCategory();
-  //   }, []);
 
   return (
     <section className="mt-[130px] relative">
@@ -41,6 +34,7 @@ const FreshProducts = ({ data, product }) => {
             width={60}
             height={10}
             className="absolute top-[-100px] md:right-30 right-5 z-11"
+            alt="no support image"
           />
         </div>
         <div className="">
@@ -59,7 +53,7 @@ const FreshProducts = ({ data, product }) => {
             "We pride ourselves on offering a wide variety of fresh and flavorful fruits, vegetables, and salad ingredients."
           }
         />
-        <Category data={data} handleCategory={handleCategory} />
+        <Category data={data} handleCategory={handleCategory} active={active} />
 
         {/* product list  */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-8">

@@ -5,13 +5,21 @@ import "./hero.css";
 
 const Hero = () => {
   return (
-    <section className=" bg-fh-gray-20 pb-12 pt-10">
+    <section className=" bg-fh-gray-20 pb-12 pt-10 relative">
+      <Image
+        src={"/assets/banner-image.png"}
+        width={500}
+        height={600}
+        className="absolute hidden xl:block bottom-0  md:right-[-0px] z-10 "
+        alt="no support image"
+      />
       <div className="hidden lg:block">
         <Image
           src={"/assets/pata-top.png"}
           width={60}
           height={10}
           className="absolute top-28 left-0 z-11"
+          alt="no support image"
         />
       </div>
       <div className=" container ">
@@ -41,7 +49,8 @@ const Hero = () => {
                 src={"/assets/pata.png"}
                 width={60}
                 height={10}
-                className="absolute top-24 left-10 z-11"
+                className="absolut  top-24 left-10 z-11"
+                alt="no support image"
               />
             </div>
             <div className=" ml-8">
@@ -49,7 +58,8 @@ const Hero = () => {
                 src={"/assets/banner-image.png"}
                 width={880}
                 height={700}
-                className="absolute w-[250] md:w-[400] xl:[880] bottom-[-46px] right-[-20px] md:right-[-20px] z-10 "
+                className="absolute xl:hidden w-[250] md:w-[400] xl:[880] bottom-[-46px] right-[-20px] md:right-[-20px] z-10 "
+                alt="no support image"
               />
             </div>
           </div>

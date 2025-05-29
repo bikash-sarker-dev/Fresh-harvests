@@ -12,6 +12,7 @@ const AboutFresh = () => {
                 width={60}
                 height={10}
                 className="absolute md:top-20 md:right-16 right-5 z-11"
+                alt="no support image"
               />
             </div>
             <Image

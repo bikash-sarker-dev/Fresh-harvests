@@ -1,6 +1,6 @@
 import ProductCard from "@/components/home/FeshProducts/ProductCard";
 
-const RelatedProduct = () => {
+const RelatedProduct = ({ RelatedData }) => {
   return (
     <div className="my-24">
       <div className="container">
@@ -11,10 +11,9 @@ const RelatedProduct = () => {
           <h2 className="text-5xl font-bold mt-2">Related products</h2>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          {RelatedData.map((product) => (
+            <ProductCard product={product} key={product.id} />
+          ))}
         </div>
       </div>
     </div>

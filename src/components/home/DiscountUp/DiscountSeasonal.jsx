@@ -30,6 +30,7 @@ const DiscountSeasonal = () => {
                 width={60}
                 height={10}
                 className="absolute top-[-50px] rotate-180 left-[-60px] z-11"
+                alt="no support image"
               />
             </div>
             <Image
