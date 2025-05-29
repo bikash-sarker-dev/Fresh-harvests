@@ -1,0 +1,36 @@
+.bg-gradient-linear {
+  background: linear-gradient(
+    90deg,
+    hsla(275, 19%, 88%, 1) 0%,
+    hsla(0, 0%, 100%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    90deg,
+    hsla(275, 19%, 88%, 1) 0%,
+    hsla(0, 0%, 100%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    90deg,
+    hsla(275, 19%, 88%, 1) 0%,
+    hsla(0, 0%, 100%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E1DAE6", endColorstr="#FFFFFF", GradientType=1 );
+}
+
+/* .bg-shape {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(100%);
+  -webkit-transform: translate(100%);
+  -moz-transform: translate(100%);
+  -ms-transform: translate(100%);
+  -o-transform: translate(100%);
+  background-color: aquamarine;
+  z-index: 33;
+} */
