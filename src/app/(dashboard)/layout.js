@@ -49,7 +49,7 @@ export default function DashboardLayout({ children }) {
                 Add Product
               </Link>
             </li>
-            <li className="flex items-center gap-2 text-gray-700 hover:text-blue-500 cursor-pointer">
+            <li className="flex items-center gap-2 text-gray-700 hover:text-fh-primary cursor-pointer">
               <Link
                 href={"/admin-dashboard/profile"}
                 className="flex items-center gap-2"
@@ -57,7 +57,7 @@ export default function DashboardLayout({ children }) {
                 <FaUser /> Profile
               </Link>
             </li>
-            <li className="flex items-center gap-2 text-gray-700 hover:text-blue-500 cursor-pointer">
+            <li className="flex items-center gap-2 text-gray-700 hover:text-fh-primary cursor-pointer">
               <Link
                 href={"/admin-dashboard/settings"}
                 className="flex items-center gap-2"
@@ -65,7 +65,7 @@ export default function DashboardLayout({ children }) {
                 <FaCog /> Settings
               </Link>
             </li>
-            <li className="flex items-center gap-2 text-gray-700 hover:text-blue-500 cursor-pointer">
+            <li className="flex items-center gap-2 text-gray-700 hover:text-fh-primary cursor-pointer">
               <Link href={"/"} className="flex items-center gap-2">
                 <FaHome /> Go To website Home
               </Link>

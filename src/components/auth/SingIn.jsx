@@ -31,7 +31,7 @@ const SingIn = () => {
         setLoading(false);
         const theme = cookieStore.set("token", data.data.token);
         document.getElementById("login").close();
-        toast.success("successfully sign in ");
+        toast.success("successfully sign in ", { duration: 3000 });
         setPassword("");
         setEmail("");
         window.location.reload();

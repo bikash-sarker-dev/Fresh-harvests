@@ -28,7 +28,7 @@ const Register = () => {
         setLoading(false);
         const theme = cookieStore.set("user", JSON.stringify(data.data));
         document.getElementById("register").close();
-        toast.success("successfully ");
+        toast.success("successfully ", { duration: 3000 });
         setPassword("");
         setUserName("");
         setEmail("");
