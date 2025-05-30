@@ -1,9 +1,10 @@
 "use client";
+import CardProduct from "@/app/products/[id]/components/CardProduct";
 import SectionHeader from "@/components/sectionHeader/SectionHeader";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import Category from "./Category";
-import ProductCard from "./ProductCard";
 
 const FreshProducts = ({ data, product }) => {
   let [active, setActive] = useState();
@@ -59,17 +60,20 @@ const FreshProducts = ({ data, product }) => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
           {category &&
             category.map((product) => (
-              <ProductCard product={product} key={product.id} />
+              <CardProduct product={product} key={product.id} />
             ))}
           {defaultProduct &&
             defaultProduct.map((product) => (
-              <ProductCard product={product} key={product.id} />
+              <CardProduct product={product} key={product.id} />
             ))}
         </div>
         <div className="text-center mt-6">
-          <button className="btn border text-lg py-4 px-8 font-medium text-fh-primary border-fh-primary btn-outline">
+          <Link
+            href={"/products"}
+            className="btn border text-lg py-4 px-8 font-medium text-fh-primary border-fh-primary btn-outline"
+          >
             See All Products
-          </button>
+          </Link>
         </div>
       </div>
     </section>

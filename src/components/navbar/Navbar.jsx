@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { FaShoppingCart } from "react-icons/fa";
 import { MdOutlineFavorite } from "react-icons/md";
 import SingIn from "../auth/SingIn";
@@ -11,6 +12,7 @@ import SingIn from "../auth/SingIn";
 const Navbar = () => {
   const pathname = usePathname();
   let [users, setUser] = useState(null);
+  const [scroll, setScroll] = useState(false);
   const cookies = useCookies();
 
   //   logout function working
@@ -18,12 +20,19 @@ const Navbar = () => {
     let token = cookies.remove("token");
     setUser(token);
     window.location.replace();
+    toast.success("successfully sing Out");
   };
 
   useEffect(() => {
     let token = cookies.get("token");
     setUser(token);
   }, [users]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScroll(window.scrollY > 5);
+    });
+  });
 
   //   the nav all lists
   let links = (
@@ -50,9 +59,9 @@ const Navbar = () => {
 
   if (!pathname.includes("dashboard")) {
     return (
-      <div className="bg-fh-gray-20">
+      <div className={`bg-fh-gray-20 ${scroll ? "sticky w-full " : ""} `}>
         <div className="container mx-auto">
-          <div className="navbar py-5">
+          <div className="navbar py-3">
             <div className="navbar-start">
               <div className="dropdown">
                 <div
