@@ -7,24 +7,24 @@ import { useState } from "react";
 import Category from "./Category";
 
 const FreshProducts = ({ data, product }) => {
-  let [active, setActive] = useState();
+  let [active, setActive] = useState(null);
+  let [shift, setShift] = useState(product);
   let [category, setCategory] = useState([]);
 
+  let defaultProduct = product.slice(0, 8);
   const handleCategory = (id) => {
     setActive(id);
     if (id) {
       let categoryFilter = product.filter(
         (product) => product.categoryId === id
       );
+
       setCategory(categoryFilter);
     } else {
       let defaultProduct = product.slice(0, 8);
       setCategory(defaultProduct);
     }
   };
-
-  let defaultProduct = product.slice(0, 8);
-  const mainProduct = defaultProduct || category;
 
   return (
     <section className="mt-[130px] relative">
@@ -58,14 +58,13 @@ const FreshProducts = ({ data, product }) => {
 
         {/* product list  */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-          {category &&
-            category.map((product) => (
-              <CardProduct product={product} key={product.id} />
-            ))}
-          {defaultProduct &&
-            defaultProduct.map((product) => (
-              <CardProduct product={product} key={product.id} />
-            ))}
+          {active
+            ? category.map((product) => (
+                <CardProduct product={product} key={product.id} />
+              ))
+            : defaultProduct.map((product) => (
+                <CardProduct product={product} key={product.id} />
+              ))}
         </div>
         <div className="text-center mt-6">
           <Link

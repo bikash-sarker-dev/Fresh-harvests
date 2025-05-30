@@ -20,7 +20,7 @@ const CardProduct = ({ product }) => {
             href={""}
             className="btn btn-sm md:btn-md hover:bg-fh-primary duration-300 ease-in-out  btn-block border border-fh-gray-50"
           >
-            Add To Card
+            Add To Cart
           </Link>
           <Link
             href={`/products/${product.id}`}
