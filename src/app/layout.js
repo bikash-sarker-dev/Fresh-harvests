@@ -1,5 +1,6 @@
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
+import ProductProvider from "@/provider/ProductProvider";
 import { CookiesProvider } from "next-client-cookies/server";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "react-hot-toast";
@@ -26,16 +27,18 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <CookiesProvider>
-          <Toaster />
-          <header>
-            <Navbar />
-          </header>
-          <main>{children}</main>
-          <footer>
-            <Footer />
-          </footer>
-        </CookiesProvider>
+        <ProductProvider>
+          <CookiesProvider>
+            <Toaster />
+            <header>
+              <Navbar />
+            </header>
+            <main>{children}</main>
+            <footer>
+              <Footer />
+            </footer>
+          </CookiesProvider>
+        </ProductProvider>
       </body>
     </html>
   );

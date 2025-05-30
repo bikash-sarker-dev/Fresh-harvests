@@ -22,7 +22,7 @@ export default function DashboardCharts() {
   });
 
   return (
-    <div className="mixed-chart max-w-sm">
+    <div className="mixed-chart ">
       <Chart
         options={chartData.options}
         series={chartData.series}

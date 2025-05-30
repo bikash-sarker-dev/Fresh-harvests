@@ -1,7 +1,18 @@
+"use client";
+import { ProductContext } from "@/contextApi/prodcutContext";
 import Link from "next/link";
+import { useContext } from "react";
 
 const CardProduct = ({ product }) => {
+  const { cartAdd, setCartAdd } = useContext(ProductContext);
   let { productName, images, price } = product || {};
+
+  const handleAddProduct = (productItem) => {
+    console.log(productItem);
+    setCartAdd([...cartAdd, productItem]);
+  };
+
+  console.log(cartAdd);
 
   return (
     <div className="card group cursor-pointer bg-base-100 md:pt-3 pt-2 rounded-xl shadow-sm mb-2 md:p-3 p-2 py-0">
@@ -16,12 +27,12 @@ const CardProduct = ({ product }) => {
         <h2 className=" text-lg font-medium">{productName}</h2>
         <p className="text-fh-gray-100 text-lg">${price}/kg</p>
         <div className="card-actions w-full">
-          <Link
-            href={""}
+          <button
+            onClick={() => handleAddProduct(product)}
             className="btn btn-sm md:btn-md hover:bg-fh-primary duration-300 ease-in-out  btn-block border border-fh-gray-50"
           >
             Add To Cart
-          </Link>
+          </button>
           <Link
             href={`/products/${product.id}`}
             className="text-center text-fh-primary text-md font-medium w-full underline"

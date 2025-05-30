@@ -1,9 +1,10 @@
 "use client";
+import { ProductContext } from "@/contextApi/prodcutContext";
 import { useCookies } from "next-client-cookies";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { FaShoppingCart } from "react-icons/fa";
 import { MdOutlineFavorite } from "react-icons/md";
@@ -16,6 +17,8 @@ const Navbar = () => {
   let [user, setUser] = useState(null);
   const [scroll, setScroll] = useState(false);
   const cookies = useCookies();
+  const { cartAdd } = useContext(ProductContext);
+  console.log(cartAdd);
 
   //   logout function working
   const handleSignOut = () => {
@@ -127,7 +130,7 @@ const Navbar = () => {
                 <div className="indicator">
                   <FaShoppingCart className="text-2xl" />
                   <span className="badge badge-sm w-5 h-5 text-white indicator-item bg-fh-primary rounded-full">
-                    0
+                    {cartAdd.length}
                   </span>
                 </div>
                 <span className="hidden lg:block">Cart</span>
