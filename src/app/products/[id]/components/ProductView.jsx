@@ -64,12 +64,12 @@ const ProductView = ({ details }) => {
               <span className=" text-sm text-gray-600">/kg</span>
             </div>
           </div>
-          <div className="flex gap-5 mt-10">
-            <button className="flex items-center gap-2 text-lg font-medium px-4 py-2 bg-fh-gray-50 text-gray-700 rounded-lg hover:bg-gray-300">
+          <div className="sm:flex gap-5 mt-10">
+            <button className="flex items-center justify-center gap-2 text-lg w-full sm:w-auto mb-4 sm:mb-0 font-medium px-4 py-2 bg-fh-gray-50 text-gray-700 rounded-lg hover:bg-gray-300">
               <Heart size={18} /> Save as favorite
             </button>
 
-            <button className="flex items-center gap-2 text-lg font-medium px-5 py-2 bg-fh-primary text-white rounded-lg hover:bg-orange-600">
+            <button className="flex items-center justify-center  gap-2 text-lg  w-full sm:w-auto font-medium px-5 py-2 bg-fh-primary text-white rounded-lg hover:bg-orange-600">
               <ShoppingCart size={18} /> Add to cart
             </button>
           </div>

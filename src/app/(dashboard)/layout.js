@@ -85,11 +85,19 @@ export default function DashboardLayout({ children }) {
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         {/* Topbar */}
-        <header className="bg-white shadow px-4 py-3 flex items-center justify-between md:hidden">
+        <header className="bg-fh-gray-20 shadow px-4 py-3 flex items-center justify-between md:hidden">
           <button onClick={() => setSidebarOpen(true)}>
             <FaBars className="text-xl" />
           </button>
-          <h1 className="text-lg font-semibold">Dashboard</h1>
+          <div className="text-lg font-semibold">
+            <Image
+              src={"/assets/logo.png"}
+              width={200}
+              height={50}
+              alt="logo"
+              className="w-[140px]"
+            />
+          </div>
         </header>
 
         {/* Page content */}

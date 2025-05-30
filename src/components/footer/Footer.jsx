@@ -12,7 +12,7 @@ const Footer = () => {
   if (!pathname.includes("dashboard")) {
     return (
       <div className="bg-fh-gray-20">
-        <div className="footer sm:footer-horizontal container text-base-content p-10">
+        <div className="footer sm:footer-horizontal  container text-base-content p-10">
           <div>
             <Link href={""}>
               <Image
@@ -122,7 +122,7 @@ const Footer = () => {
           </nav>
         </div>
         <div className="container">
-          <div className="footer sm:footer-horizontal border-t border-fh-gray-50  items-center p-4">
+          <div className="footer sm:footer-horizontal   border-t border-fh-gray-50  items-center p-4">
             <aside className="grid-flow-col items-center">
               <p>
                 Copyright © {new Date().getFullYear()} - All right reserved by
@@ -131,19 +131,19 @@ const Footer = () => {
             </aside>
             <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
               <Link
-                className=" w-12 h-12 bg-fh-block text-white rounded-full flex justify-center items-center"
+                className=" w-10 h-10 bg-fh-block text-white rounded-full flex justify-center items-center"
                 href={""}
               >
                 <FaTwitter className="text-xl" />
               </Link>
               <Link
-                className=" w-12 h-12 bg-fh-block text-white rounded-full flex justify-center items-center"
+                className=" w-10 h-10 bg-fh-block text-white rounded-full flex justify-center items-center"
                 href={""}
               >
                 <FaFacebookF className="text-xl" />
               </Link>
               <Link
-                className=" w-12 h-12 bg-fh-block text-white rounded-full flex justify-center items-center"
+                className=" w-10 h-10 bg-fh-block text-white rounded-full flex justify-center items-center"
                 href={""}
               >
                 <FaInstagram className="text-xl" />

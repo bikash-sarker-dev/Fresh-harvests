@@ -22,13 +22,12 @@ export default function DashboardCharts() {
   });
 
   return (
-    <div className="mixed-chart">
+    <div className="mixed-chart max-w-sm">
       <Chart
         options={chartData.options}
         series={chartData.series}
         type="bar"
-        width="1000"
-        height="600"
+        width=""
       />
     </div>
   );
