@@ -2,6 +2,7 @@
 import { ProductContext } from "@/contextApi/prodcutContext";
 import Link from "next/link";
 import { useContext } from "react";
+import toast from "react-hot-toast";
 
 const CardProduct = ({ product }) => {
   const { cartAdd, setCartAdd } = useContext(ProductContext);
@@ -9,7 +10,12 @@ const CardProduct = ({ product }) => {
 
   const handleAddProduct = (productItem) => {
     console.log(productItem);
-    setCartAdd([...cartAdd, productItem]);
+    let query = cartAdd.find((cart) => cart.id === productItem.id);
+    if (!query) {
+      setCartAdd([...cartAdd, productItem]);
+    } else {
+      toast.error("all ready added your Product", { duration: 4000 });
+    }
   };
 
   console.log(cartAdd);
