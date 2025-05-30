@@ -32,5 +32,6 @@ Start the server
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`BASE_URL=https://code-commando.com`
+`BASE_URL=https://code-commando.com`,
+
 `NEXTAUTH_URL=https://freshharvests.vercel.app`
