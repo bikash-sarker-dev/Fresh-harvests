@@ -17,7 +17,7 @@ const Navbar = () => {
   let [user, setUser] = useState(null);
   const [scroll, setScroll] = useState(false);
   const cookies = useCookies();
-  const { cartAdd } = useContext(ProductContext);
+  const { cartAdd, setCartAdd } = useContext(ProductContext);
   console.log(cartAdd);
 
   //   logout function working
@@ -44,6 +44,13 @@ const Navbar = () => {
       setScroll(window.scrollY > 5);
     });
   });
+
+  //   card product delete function
+
+  const handleCardDelete = (det) => {
+    let deleteProduct = cartAdd.filter((cart) => cart.id !== det.id);
+    setCartAdd(deleteProduct);
+  };
 
   //   the nav all lists
   let links = (
@@ -174,7 +181,10 @@ const Navbar = () => {
                             </h3>
                             {/* Price Section - Assuming there would be one */}
                             <div className="flex items-center justify-between">
-                              <button className="px-3 py-1 bg-fh-primary text-white text-sm rounded hover:bg-red-800 transition-colors">
+                              <button
+                                onClick={() => handleCardDelete(myProduct)}
+                                className="px-3 py-1 bg-fh-primary text-white text-sm rounded hover:bg-red-800 transition-colors"
+                              >
                                 X
                               </button>
                             </div>
