@@ -12,6 +12,7 @@ const Blogs = () => {
             width={60}
             height={10}
             className="absolute top-5 right-25 z-11"
+            alt="no image"
           />
         </div>
         <SectionHeader

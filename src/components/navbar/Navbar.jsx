@@ -126,15 +126,67 @@ const Navbar = () => {
                 <span>Favorites</span>
               </div>
 
-              <div className="flex items-center gap-1">
-                <div className="indicator">
-                  <FaShoppingCart className="text-2xl" />
-                  <span className="badge badge-sm w-5 h-5 text-white indicator-item bg-fh-primary rounded-full">
-                    {cartAdd.length}
-                  </span>
+              {/* Cart drawer */}
+              <div className="drawer w-auto z-20 drawer-end">
+                <input
+                  id="my-drawer-4"
+                  type="checkbox"
+                  className="drawer-toggle"
+                />
+                <div className="drawer-content">
+                  {/* Page content here */}
+
+                  <label htmlFor="my-drawer-4" className="drawer-button">
+                    <div className="flex items-center gap-1">
+                      <div className="indicator">
+                        <FaShoppingCart className="text-2xl" />
+                        <span className="badge badge-sm w-5 h-5 text-white font-bold indicator-item bg-fh-primary rounded-full">
+                          {cartAdd.length}
+                        </span>
+                      </div>
+                      <span className="hidden lg:block ml-1">Cart</span>
+                    </div>
+                  </label>
                 </div>
-                <span className="hidden lg:block">Cart</span>
+                <div className="drawer-side">
+                  <label
+                    htmlFor="my-drawer-4"
+                    aria-label="close sidebar"
+                    className="drawer-overlay"
+                  ></label>
+                  <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+                    {/* Sidebar content here */}
+
+                    {cartAdd.map((myProduct) => (
+                      <li key={myProduct?.id} className="my-1">
+                        <div className=" bg-white p-3 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 z-20">
+                          <div className=" w-16 bg-gray-200 flex items-center justify-center">
+                            <img
+                              className="w-50 "
+                              src={myProduct?.images[0]}
+                              alt="product"
+                            />
+                          </div>
+
+                          <div className="p-1 flex items-center justify-between">
+                            <h3 className=" font-semibold text-gray-800 mb-1">
+                              {myProduct?.productName}
+                            </h3>
+                            {/* Price Section - Assuming there would be one */}
+                            <div className="flex items-center justify-between">
+                              <button className="px-3 py-1 bg-fh-primary text-white text-sm rounded hover:bg-red-800 transition-colors">
+                                X
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
+
+              {/* authentication conditional */}
               {token || user ? (
                 <>
                   {" "}
