@@ -1,16 +1,18 @@
 "use client";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import SocialLogin from "./SocialLogin";
 const Register = () => {
+  const router = useRouter();
   const [fullName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
-    setLoading(!loading);
+    setLoading(true);
     e.preventDefault();
     // Handle login logic here
     let payload = { fullName, email, password };
@@ -21,14 +23,17 @@ const Register = () => {
         payload
       );
       let data = await res.data;
-      console.log(data);
+
       if (data.success) {
-        setLoading(!loading);
+        setLoading(false);
+        const theme = cookieStore.set("user", JSON.stringify(data.data));
         document.getElementById("register").close();
         toast.success("successfully ");
         setPassword("");
         setUserName("");
         setEmail("");
+        window.location.reload();
+        router.push("/");
       }
     } catch (error) {
       toast.error("authentication failed");

@@ -12,6 +12,8 @@ const FreshProducts = ({ data, product }) => {
   let [category, setCategory] = useState([]);
 
   let defaultProduct = product.slice(0, 8);
+
+  //   category function work
   const handleCategory = (id) => {
     setActive(id);
     if (id) {

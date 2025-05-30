@@ -2,7 +2,7 @@
 import { useCookies } from "next-client-cookies";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { FaShoppingCart } from "react-icons/fa";
@@ -10,23 +10,31 @@ import { MdOutlineFavorite } from "react-icons/md";
 import SingIn from "../auth/SingIn";
 
 const Navbar = () => {
+  const router = useRouter();
   const pathname = usePathname();
-  let [users, setUser] = useState(null);
+  let [token, setToken] = useState(null);
+  let [user, setUser] = useState(null);
   const [scroll, setScroll] = useState(false);
   const cookies = useCookies();
 
   //   logout function working
   const handleSignOut = () => {
     let token = cookies.remove("token");
-    setUser(token);
-    window.location.replace();
+    let person = cookies.remove("user");
+
     toast.success("successfully sing Out");
+    router.push("/");
+    router.refresh();
+    setUser(null);
+    setToken(null);
   };
 
   useEffect(() => {
     let token = cookies.get("token");
-    setUser(token);
-  }, [users]);
+    let man = cookies.get("user");
+    setToken(token);
+    setUser(man);
+  }, [user, token]);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -49,7 +57,12 @@ const Navbar = () => {
       <li>
         <Link href={"/blog/id"}>BLog</Link>
       </li>
-      {users && (
+      {token && (
+        <li>
+          <Link href={"/admin-dashboard"}>Dashboard</Link>
+        </li>
+      )}
+      {user && (
         <li>
           <Link href={"/admin-dashboard"}>Dashboard</Link>
         </li>
@@ -61,8 +74,8 @@ const Navbar = () => {
     return (
       <div className={`bg-fh-gray-20 ${scroll ? "sticky w-full " : ""} `}>
         <div className="container mx-auto">
-          <div className="navbar py-3">
-            <div className="navbar-start">
+          <div className={`navbar py-4`}>
+            <div className="navbar-start ">
               <div className="dropdown">
                 <div
                   tabIndex={0}
@@ -119,7 +132,7 @@ const Navbar = () => {
                 </div>
                 <span className="hidden lg:block">Cart</span>
               </div>
-              {users ? (
+              {token || user ? (
                 <>
                   {" "}
                   <button

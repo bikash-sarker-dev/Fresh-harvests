@@ -15,7 +15,7 @@ const SingIn = () => {
 
   // / Handle login logic here
   const handleSubmit = async (e) => {
-    setLoading(!loading);
+    setLoading(true);
     e.preventDefault();
 
     let payload = { email, password };
@@ -26,9 +26,9 @@ const SingIn = () => {
         payload
       );
       let data = await res.data;
-      console.log(data);
+
       if (data.success) {
-        setLoading(!loading);
+        setLoading(false);
         const theme = cookieStore.set("token", data.data.token);
         document.getElementById("login").close();
         toast.success("successfully sign in ");
