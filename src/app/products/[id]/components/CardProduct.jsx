@@ -18,7 +18,7 @@ const CardProduct = ({ product }) => {
         <div className="card-actions w-full">
           <Link
             href={""}
-            className="btn btn-sm md:btn- group-hover:bg-fh-primary duration-300 ease-in-out  btn-block border border-fh-gray-50"
+            className="btn btn-sm md:btn-md hover:bg-fh-primary duration-300 ease-in-out  btn-block border border-fh-gray-50"
           >
             Add To Card
           </Link>

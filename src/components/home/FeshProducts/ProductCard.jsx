@@ -12,7 +12,7 @@ const ProductCard = ({ product }) => {
           className="rounded-xl h-[40] md:h-[100] group-hover:scale-125 transition duration-300 ease-in-out"
         />
       </figure>
-      <div className="card-body px-0 pb-4 items-center mt-[-10px] text-center mb-0">
+      <div className="card-body px-0 pb-1 items-center mt-[-10px] text-center mb-0">
         <h2 className=" text-lg font-medium">{productName}</h2>
         <p className="text-fh-gray-100 text-lg">${price}/kg</p>
         <div className="card-actions w-full">
