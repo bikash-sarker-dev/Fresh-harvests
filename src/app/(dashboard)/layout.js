@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FaBars, FaCog, FaHome, FaTimes, FaUser } from "react-icons/fa";
+import { RiFileAddFill } from "react-icons/ri";
+
 export default function DashboardLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
@@ -32,10 +34,19 @@ export default function DashboardLayout({ children }) {
           <ul className="space-y-4">
             <li className="flex items-center gap-2 text-gray-700 hover:text-fh-primary cursor-pointer">
               <Link
-                href={"/user-dashboard/profile"}
+                href={"/user-dashboard"}
                 className="flex items-center gap-2"
               >
                 <FaHome /> Dashboard Home
+              </Link>
+            </li>
+            <li className="flex items-center gap-2 text-gray-700 hover:text-fh-primary cursor-pointer">
+              <Link
+                href={"/user-dashboard/product-add"}
+                className="flex items-center gap-2"
+              >
+                <RiFileAddFill />
+                Add Product
               </Link>
             </li>
             <li className="flex items-center gap-2 text-gray-700 hover:text-blue-500 cursor-pointer">

@@ -40,9 +40,11 @@ const Navbar = () => {
       <li>
         <Link href={"/blog/id"}>BLog</Link>
       </li>
-      <li>
-        <Link href={"/user-dashboard"}>Dashboard</Link>
-      </li>
+      {users && (
+        <li>
+          <Link href={"/user-dashboard"}>Dashboard</Link>
+        </li>
+      )}
     </>
   );
 
