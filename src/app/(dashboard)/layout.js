@@ -34,7 +34,7 @@ export default function DashboardLayout({ children }) {
           <ul className="space-y-4">
             <li className="flex items-center gap-2 text-gray-700 hover:text-fh-primary cursor-pointer">
               <Link
-                href={"/user-dashboard"}
+                href={"/admin-dashboard"}
                 className="flex items-center gap-2"
               >
                 <FaHome /> Dashboard Home
@@ -42,7 +42,7 @@ export default function DashboardLayout({ children }) {
             </li>
             <li className="flex items-center gap-2 text-gray-700 hover:text-fh-primary cursor-pointer">
               <Link
-                href={"/user-dashboard/product-add"}
+                href={"/admin-dashboard/product-add"}
                 className="flex items-center gap-2"
               >
                 <RiFileAddFill />
@@ -51,7 +51,7 @@ export default function DashboardLayout({ children }) {
             </li>
             <li className="flex items-center gap-2 text-gray-700 hover:text-blue-500 cursor-pointer">
               <Link
-                href={"/user-dashboard/profile"}
+                href={"/admin-dashboard/profile"}
                 className="flex items-center gap-2"
               >
                 <FaUser /> Profile
@@ -59,7 +59,7 @@ export default function DashboardLayout({ children }) {
             </li>
             <li className="flex items-center gap-2 text-gray-700 hover:text-blue-500 cursor-pointer">
               <Link
-                href={"/user-dashboard/settings"}
+                href={"/admin-dashboard/settings"}
                 className="flex items-center gap-2"
               >
                 <FaCog /> Settings

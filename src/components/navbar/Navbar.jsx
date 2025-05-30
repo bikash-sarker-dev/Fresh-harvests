@@ -13,8 +13,7 @@ const Navbar = () => {
   let [users, setUser] = useState(null);
   const cookies = useCookies();
 
-  console.log(pathname.includes("dashboard"));
-
+  //   logout function working
   const handleSignOut = () => {
     let token = cookies.remove("token");
     setUser(token);
@@ -26,6 +25,7 @@ const Navbar = () => {
     setUser(token);
   }, [users]);
 
+  //   the nav all lists
   let links = (
     <>
       <li>
@@ -42,7 +42,7 @@ const Navbar = () => {
       </li>
       {users && (
         <li>
-          <Link href={"/user-dashboard"}>Dashboard</Link>
+          <Link href={"/admin-dashboard"}>Dashboard</Link>
         </li>
       )}
     </>
